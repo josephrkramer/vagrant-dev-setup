@@ -27,10 +27,10 @@ apt-get install -y curl
 wget -c http://repo.scala-sbt.org/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.13.0/sbt.deb
 dpkg -i sbt.deb
 
-#configure user
-su vagrant
 #download emacs config
 wget -c https://raw.github.com/josephrkramer/emacs-config/master/.emacs
+chown -R vagrant:vagrant .emacs
 
 #initialize dev repos
 git clone https://github.com/josephrkramer/akka-backprop.git
+chown -R vagrant:vagrant akka-backprop
