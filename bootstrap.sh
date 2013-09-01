@@ -1,7 +1,6 @@
 #!/bin/bash
 
 apt-get update
-#apt-get install -y emacs23
 
 #emacs24
 apt-get install -y make libjpeg-dev libpng-dev libgif-dev libtiff-dev libncurses-dev
@@ -13,4 +12,10 @@ make
 make install
 
 apt-get install -y git
+git config --global user.name "Joseph Kramer"
+git config --global user.email joseph.ryan.kramer@gmail.com
+git config --global core.editor emacs
+git config --global color.ui auto
+
+
 apt-get install -y openjdk-7-jre-headless
