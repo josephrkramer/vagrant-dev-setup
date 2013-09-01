@@ -10,6 +10,7 @@ cd emacs-24.3
 ./configure
 make
 make install
+cd ..
 
 #install and configure git
 apt-get install -y git
@@ -18,10 +19,11 @@ git config --global user.email joseph.ryan.kramer@gmail.com
 git config --global core.editor emacs
 git config --global color.ui auto
 
-
-apt-get install -y openjdk-7-jre-headless
+#Java7 JDK
+apt-get install -y openjdk-7-jdk
 
 #sbt for scala
+apt-get install -y curl
 wget -c http://repo.scala-sbt.org/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.13.0/sbt.deb
 dpkg -i sbt.deb
 
