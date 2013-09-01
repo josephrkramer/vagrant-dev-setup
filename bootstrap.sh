@@ -11,6 +11,7 @@ cd emacs-24.3
 make
 make install
 
+#install and configure git
 apt-get install -y git
 git config --global user.name "Joseph Kramer"
 git config --global user.email joseph.ryan.kramer@gmail.com
@@ -19,3 +20,15 @@ git config --global color.ui auto
 
 
 apt-get install -y openjdk-7-jre-headless
+
+#sbt for scala
+wget -c http://repo.scala-sbt.org/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.13.0/sbt.deb
+dpkg -i sbt.deb
+
+#configure user
+su vagrant
+#download emacs config
+wget -c https://raw.github.com/josephrkramer/emacs-config/master/.emacs
+
+#initialize dev repos
+git clone https://github.com/josephrkramer/akka-backprop.git
