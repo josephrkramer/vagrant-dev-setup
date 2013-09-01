@@ -28,9 +28,7 @@ wget -c http://repo.scala-sbt.org/scalasbt/sbt-native-packages/org/scala-sbt/sbt
 dpkg -i sbt.deb
 
 #download emacs config
-wget -c https://raw.github.com/josephrkramer/emacs-config/master/.emacs
-chown -R vagrant:vagrant .emacs
+su - vagrant -c "wget -c https://raw.github.com/josephrkramer/emacs-config/master/.emacs"
 
 #initialize dev repos
-git clone https://github.com/josephrkramer/akka-backprop.git
-chown -R vagrant:vagrant akka-backprop
+su - vagrant -c "git clone https://github.com/josephrkramer/akka-backprop.git"
