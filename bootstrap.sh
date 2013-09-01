@@ -14,10 +14,10 @@ cd ..
 
 #install and configure git
 apt-get install -y git
-git config --global user.name "Joseph Kramer"
-git config --global user.email joseph.ryan.kramer@gmail.com
-git config --global core.editor emacs
-git config --global color.ui auto
+su - vagrant -c "git config --global user.name \"Joseph Kramer\""
+su - vagrant -c "git config --global user.email joseph.ryan.kramer@gmail.com"
+su - vagrant -c "git config --global core.editor emacs"
+su - vagrant -c "git config --global color.ui auto"
 
 #Java7 JDK
 apt-get install -y openjdk-7-jdk
