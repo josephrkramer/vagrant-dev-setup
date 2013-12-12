@@ -35,6 +35,24 @@ if [ ! `which sbt` ] ; then
     dpkg -i sbt.deb
 fi
 
+#firefox (and a bit of X)
+if [ ! `which firefox` ] ; then
+    apt-get install -y firefox
+fi
+
+#intellij
+if [ ! -e initialized ] ; then
+    #need to install Java 6 since XMonad and IntelliJ don't play well together
+    apt-get install -y openjdk-6-jdk
+    echo "export IDEA_JDK=/usr/lib/jvm/java-6-openjdk-amd64"
+
+    su - vagrant -c "wget -c http://download.jetbrains.com/idea/ideaIC-13.tar.gz"
+    su - vagrant -c "tar -xzf ideaIC-13.tar.gz"
+    su - vagrant -c "mv idea-IC* idea-IC-13"
+    echo "export PATH=$PATH:/home/vagrant/idea-IC-13/bin" >> .bashrc
+    touch initialized
+fi
+
 #download emacs config
 su - vagrant -c "wget -c https://raw.github.com/josephrkramer/emacs-config/master/.emacs"
 
